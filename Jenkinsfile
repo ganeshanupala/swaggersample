@@ -11,7 +11,7 @@ void thigModulesProcessor() {
     println("******************************************************************************************************************************")
 	if (projectName.equals("default")){
 		sh "cat nextgenyamlfile.conf"
-		sh mvn -version
+		
 
 		moduleNameListStr = readFile "nextgenyamlfile.conf"
 	}else{
