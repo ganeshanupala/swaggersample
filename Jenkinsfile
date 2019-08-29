@@ -34,6 +34,9 @@ void thigModulesProcessor() {
 		println("******************************************************************************************************************************")
 		
 		if (!packageName.equals("") && packageName!=null) {
+			sh "echo DEBUG maven source generated"
+			sh "mvn -version"
+			sh "echo mvn -version"
 			sh "mvn generate-sources -DyamlFileName=${tempProject}.yaml -DprojectName=${tempProject} -DpackageName=${packageName} -f pom.xml"
 			sh "echo DEBUG maven source generated"
 			sh "mvn -version"
