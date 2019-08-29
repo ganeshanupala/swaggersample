@@ -1,0 +1,71 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.swagger</groupId>
+    <artifactId>swagger-swagger-codegen</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <name>swagger-swagger-codegen</name>
+    <description>To generate client ready library files using YAML files</description>
+    <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.5.1</version>
+                    <configuration>
+                        <source>${java.version}</source>
+                        <target>${java.version}</target>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+        <plugins>
+            <plugin>
+                <!--<groupId>org.openapitools</groupId>
+                <artifactId>openapi-generator-maven-plugin</artifactId>
+                <version>4.1.0</version>-->
+
+                <groupId>io.swagger.codegen.v3</groupId>
+                <artifactId>swagger-codegen-maven-plugin</artifactId>
+                <version>3.0.10</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>generate</goal>
+                        </goals>
+                        <configuration>
+                            <inputSpec>${basedir}/${yamlFileName}</inputSpec>
+                            <language>java</language>
+                            <output>${basedir}/yaml-to-java/${projectName}-javacode</output>
+                            <modelPackage>${packageName}.models</modelPackage>
+                            <ignoreFileOverride>false</ignoreFileOverride>
+                            <!--<skipValidateSpec>false</skipValidateSpec>-->
+                            <generateApis>false</generateApis>
+                            <generateApiTests>false</generateApiTests>
+                            <generateApiDocumentation>false</generateApiDocumentation>
+                            <generateModels>true</generateModels>
+                            <generateModelTests>false</generateModelTests>
+                            <generateModelDocumentation>false</generateModelDocumentation>
+                            <supportingFilesToGenerate>pom.xml</supportingFilesToGenerate>
+                            <groupId>com.swagger</groupId>
+                            <artifactId>swagger-swagger-codegen</artifactId>
+                            <artifactVersion>1.0.0-SNAPSHOT</artifactVersion>
+                            <configOptions>
+                                <dateLibrary>java8</dateLibrary>
+                                <library>jersey2</library>
+                                <sourceFolder>src/main/java</sourceFolder>
+                                <serializableModel>true</serializableModel>
+                                <!--                                <withXml>true</withXml>-->
+                                <!--                                <java8>true</java8>-->
+                            </configOptions>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        
+    </dependencies>
+</project>
