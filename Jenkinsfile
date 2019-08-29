@@ -36,6 +36,7 @@ void thigModulesProcessor() {
 		if (!packageName.equals("") && packageName!=null) {
 			sh "mvn generate-sources -DyamlFileName=${tempProject}.yaml -DprojectName=${tempProject} -DpackageName=${packageName} -f pom.xml"
 			sh "echo DEBUG maven source generated"
+			sh "mvn -version"
 			sh "sed -i s/1.0.0-SNAPSHOT/${artifactVersion}/g yaml-to-java/${tempProject}-javacode/pom.xml"
 			sh "mvn clean package -f yaml-to-java/${tempProject}-javacode/pom.xml -DartifactVersion=${artifactVersion} -DmissedCount=100 -DskipTests=true"
 			println("******************************************************************************************************************************")
