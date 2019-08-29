@@ -39,7 +39,7 @@
                             <language>java</language>
                             <output>${basedir}/yaml-to-java/${projectName}-javacode</output>
                             <modelPackage>${packageName}.models</modelPackage>
-                            <ignoreFileOverride>false</ignoreFileOverride>
+                            <ignoreFileOverride>true</ignoreFileOverride>
                             <!--<skipValidateSpec>false</skipValidateSpec>-->
                             <generateApis>false</generateApis>
                             <generateApiTests>false</generateApiTests>
