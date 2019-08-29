@@ -68,10 +68,6 @@ pipeline {
 			steps { thigModulesProcessor() }
 		}
 	}
-	post {
-		always {
-			deleteDir()
-		}
-	}
+	
 
 }
