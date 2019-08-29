@@ -10,7 +10,7 @@ void thigModulesProcessor() {
 	println("Option Selected: "+projectName)
     println("******************************************************************************************************************************")
 	if (projectName.equals("default")){
-		sh "cat nextgenyamlfile.conf"
+		
 		moduleNameListStr = readFile "nextgenyamlfile.conf"
 	}else{
 		moduleNameListStr = projectName
