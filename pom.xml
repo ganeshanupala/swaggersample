@@ -28,7 +28,7 @@
 
                 <groupId>io.swagger.codegen.v3</groupId>
                 <artifactId>swagger-codegen-maven-plugin</artifactId>
-                <version>1.0.0-rc0</version>
+                <version>3.0.0-rc0</version>
                 <executions>
                     <execution>
                         <goals>
