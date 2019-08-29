@@ -49,8 +49,8 @@
                             <generateModelDocumentation>false</generateModelDocumentation>
                             <supportingFilesToGenerate>pom.xml</supportingFilesToGenerate>
                             <groupId>com.swagger</groupId>
-                            <artifactId>swagger-swagger-codegen</artifactId>
-                            <artifactVersion>1.0.0-SNAPSHOT</artifactVersion>
+                            <artifactId>${projectName}</artifactId>
+                            <artifactVersion>${artifactVersion}</artifactVersion>
                             <configOptions>
                                 <dateLibrary>java8</dateLibrary>
                                 <library>jersey2</library>
